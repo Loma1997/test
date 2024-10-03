@@ -1,0 +1,897 @@
+/* ********* Start Details-Company ********* */
+.Details-Company {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+  display: none;
+}
+
+.Receipt-Container .Details-Company {
+  display: flex;
+}
+
+.Details-Company {
+  border-bottom: 1px solid var(--blue);
+}
+
+.Details-Company .NameCompany {
+  font-size: 45px;
+  color: var(--blue-linear);
+}
+
+.Details-Company .Address,
+.Details-Company .Phone {
+  margin-top: 5px;
+  /* color: var(--black); */
+}
+
+.Details-Company .Logo {
+  width: 150px;
+  height: 100px;
+}
+
+/* ********* End Details-Company ********* */
+/* ********* Start Title-Container ********* */
+.Wrapper-Tilte {
+  width: fit-content;
+}
+
+.Layout-Container .Title-Container,
+.Layout-Container .Title-Container2 {
+  font-size: 28px;
+  color: var(--black);
+}
+
+.Layout-Container .Title-Container2 {
+  display: none;
+}
+
+/* ********* End Title-Container ********* */
+/* ********* Start Buttons-Container ********* */
+.Layout-Container .Buttons-Container {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 15px 0;
+}
+
+.Layout-Container .Buttons-Container .Row {
+  width: 800px;
+}
+
+.Layout-Container .Buttons-Container .Row .card-item {
+  margin: 0 !important;
+}
+
+.gray .item-icon {
+  color: var(--blue) !important;
+}
+
+.Layout-Container .Buttons-Container .left {
+  display: flex;
+  gap: 7px;
+}
+
+.Layout-Container .Buttons-Container p {
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+/* ********* End Buttons-Container ********* */
+/* ********* Start Person-Details ********* */
+.Person-Details {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 4fr 2.25fr;
+  gap: 15px;
+  color: var(--black);
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin-bottom: 10px;
+  border: var(--border);
+}
+
+.Person-Details.Person-Img {
+  grid-template-columns: 1fr 4fr 2fr;
+}
+
+.Form .Person-Details {
+  margin-top: 20px;
+  border: var(--border);
+}
+
+.Person-Details .item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.Person-Details .item h4 {
+  width: 120px;
+  align-items: center;
+}
+
+.Person-Details .left .item h4 {
+  width: 135px;
+}
+
+.Person-Details .item h4::after {
+  content: ':';
+  padding-left: 10px;
+  float: left;
+}
+
+.Person-Details .item p {
+  font-size: 15px;
+  font-weight: 600;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Layout-Container .Person-Details img {
+  width: 145px;
+  border-radius: 8px;
+}
+
+.Layout-Container .Person-Details .btns {
+  margin-top: 20px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ********* End Person-Details ********* */
+/* ********* Start Search-Container ********* */
+.Layout-Container .Search-Container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.Layout-Container .Search-Container.active {
+  opacity: 1;
+  pointer-events: auto;
+  height: auto;
+  margin: 30px 0 15px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.Layout-Container .Search-Container .input-box {
+  margin: 0 !important;
+}
+
+.Filter-icon {
+  cursor: pointer;
+}
+
+.Layout-Container .Search-Container .filter-item {
+  width: 200px;
+  background: var(--white);
+  border: var(--border);
+  border-radius: 5px;
+  padding: 5px 2px;
+  position: absolute;
+  top: 50px;
+  z-index: 99;
+  left: 0;
+  transition: all 0.1s ease-in-out;
+  display: none;
+}
+
+.Layout-Container .Search-Container .filter-item.active {
+  display: block;
+}
+
+.Layout-Container .Search-Container .filter-item h5 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.Layout-Container .Search-Container .filter-item h5.active,
+.Layout-Container .Search-Container .filter-item h5:hover {
+  background: var(--secondary);
+}
+
+.Layout-Container .Search-Container .filter-item h5.active::after {
+  content: '✔';
+  float: left;
+}
+
+/* ********* End Search-Container ********* */
+/* ********* End Table-Container ********* */
+.Table-Container {
+  height: calc(100vh - 200px);
+  overflow: auto;
+}
+
+.Table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+.Table thead tr {
+  height: 35px;
+  text-align: right;
+  font-weight: bold;
+  color: var(--FFF);
+  background: var(--blue-linear);
+  position: sticky;
+  top: -2px;
+  z-index: 8;
+}
+
+.Table tbody tr {
+  color: var(--black);
+  font-weight: 600;
+}
+
+.Table tbody.HideFirstRow tr:first-child {
+  display: none;
+}
+
+.Table th,
+.Table td {
+  padding: 5px 10px;
+}
+
+.Table td img {
+  width: 35px;
+  border-radius: 5px;
+}
+
+.FlexTH {
+  display: flex;
+  justify-content: space-between;
+}
+
+.FlexTD {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.FlexTD span:last-child {
+  min-width: 50px;
+  text-align: center;
+  color: var(--black);
+  border: var(--border);
+  padding: 1px 10px;
+  border-radius: 5px;
+  margin-right: auto;
+}
+
+.FlexTD .Credit {
+  background: var(--red);
+  color: var(--FFF) !important;
+}
+
+.FlexTD .Debit-Credit {
+  display: none;
+}
+
+.Table td .Plan {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 0px 10px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.Table td .Plan.Month {
+  background: var(--primary);
+}
+
+.Table td .Plan.Year {
+  background: var(--green);
+}
+
+.Table tbody tr:nth-of-type(even) {
+  background: var(--tr-bg);
+}
+
+.Table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--blue);
+}
+
+.Table tbody tr:hover {
+  cursor: default;
+}
+
+.Table tr th,
+.Table tr td {
+  border: var(--border);
+}
+
+
+/* ********* End Table-Container ********* */
+/* ********* Start Any btn ********* */
+.btn-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Table .btn-box .tooltip {
+  top: -40px;
+}
+
+.btn {
+  width: 130px;
+  height: 35px;
+  border: none;
+  color: var(--FFF);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 900;
+  position: relative;
+  transition: all .2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Layout-Container .Person-Details .btns .btn,
+.Layout-Container .Buttons-Container .btn {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2em;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.Table .btn {
+  width: 30px;
+  height: 30px;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.btn-Save {
+  background: var(--blue-linear);
+  color: var(--FFF);
+  border: 1px solid var(--blue-linear);
+  border-radius: 2px;
+}
+
+.btn-Save:hover {
+  background: var(--blue-linearHover);
+}
+
+.btn-Cansel {
+  background: var(--white);
+  color: var(--blue) !important;
+  border: var(--border);
+  border-radius: 2px;
+}
+
+.btn-Cansel:hover {
+  background: var(--secondary);
+}
+
+.btn-print,
+.btn-PDF,
+.btn-excel {
+  background: green;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+.btn-plus,
+.btn-search {
+  background: var(--blue-linear);
+}
+
+.btn-search:hover,
+.btn-plus:hover {
+  background: var(--blue-linearHover);
+}
+
+.btn-Collect,
+.btn-File {
+  background: var(--blue-linear);
+}
+
+.btn-Collect:hover,
+.btn-File:hover {
+  background: var(--blue-linearHover);
+}
+
+.btn-Edit {
+  background: green;
+}
+
+.btn-print:hover,
+.btn-excel:hover,
+.btn-Edit:hover {
+  background: var(--green);
+}
+
+.btn-Delete {
+  background: var(--red);
+}
+
+.Alert .btn-Delete {
+  border-radius: 2px;
+}
+
+.btn-Delete:hover {
+  background: var(--red);
+}
+
+/* ********* End  Any btn ********* */
+/* ********* Start Receipts-container ********* */
+
+.Receipts-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+/* ********* Start Receipts-Right ********* */
+.Receipts-container .Table thead tr {
+  height: 25px;
+}
+
+.Receipts-container .Table td {
+  padding: 0px 5px !important;
+}
+
+.Receipts-container .Table td .btn {
+  margin: 3px 6px;
+}
+
+.Receipts-container .Table select,
+.Receipts-container .Table input {
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 0px !important;
+  border: none !important;
+  height: 30px !important;
+  background: none !important;
+}
+
+.Receipts-container .Table .Select-box .SelectMenu input,
+.Receipts-container .Table input[type="button"] {
+  padding-right: 20px !important;
+}
+
+.Receipts-container .Table .Select-box .SelectMenu input {
+  border: 1px solid var(--blue) !important;
+}
+
+.Receipts-container .Table select option {
+  background: var(--white);
+}
+
+/* ********* End  Receipts-Right ********* */
+/* ********* Start Receipts-Left ********* */
+
+.Receipts-container .Receipt-left {
+  padding-right: 10px;
+  border-right: var(--border);
+}
+
+.Receipts-container .Receipt-left .nu-Receipt {
+  margin-bottom: 50px;
+}
+
+.Receipts-container .Receipt-left .mrg-t-50 {
+  margin-top: 50px;
+}
+
+.Receipts-container .Receipt-left button {
+  margin-top: 30px;
+  width: 100% !important;
+}
+
+.Receipts-container .Receipt-left .card-item input {
+  width: 80px !important;
+  height: 30px !important;
+  padding: 5px;
+}
+
+.Receipts-container .Receipt-left .Discount {
+  text-align: end;
+}
+
+.Receipts-container .Receipt-left .Discount:focus {
+  text-align: center;
+}
+
+.Receipts-container .Receipt-left .input-amount {
+  display: none;
+}
+
+/* ********* End  Receipts-Right ********* */
+/* ********* Start Select-box ********* */
+
+.Select-box {
+  position: relative;
+}
+
+.Form .Select-box .input-box {
+  margin-bottom: 30px !important;
+}
+
+.Form .Select-box .SelectMenu .input-box,
+.Select-box .input-box {
+  margin-bottom: 5px !important;
+}
+
+.Select-box .SelectMenu {
+  width: 100%;
+  background: var(--white);
+  border: var(--border);
+  padding: 5px;
+  position: absolute;
+  top: 50px;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.Select-box .SelectMenu.active {
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.2s ease-in-out;
+}
+
+.Select-box .SelectMenu input {
+  height: 30px !important;
+}
+
+.Select-box .SelectItmes {
+  height: 100px;
+  padding-bottom: 10px;
+  overflow-y: auto;
+}
+
+.Select-box .SelectItmes h3 {
+  color: var(--black);
+  padding: 5px 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Select-box .SelectItmes h3:hover {
+  background: var(--secondary);
+}
+
+.Receipts-container .Select-box .input-box i {
+  min-width: 10px;
+}
+
+
+/* ********* Select-box in Table ********* */
+.Receipts-container .Table .Select-box {
+  margin-top: 4px;
+}
+
+.Receipts-container .Table input[type="search"] {
+  border: 1px solid var(--blue);
+}
+
+.Receipts-container .Table .Select-box .SelectMenu {
+  top: 40px;
+}
+
+.Receipts-container .Table .Select-box input {
+  padding: 2px 30px;
+}
+
+.Receipts-container .Table .Select-box .input-box span {
+  right: -10px;
+}
+
+/* ********* End Receipts-container ********* */
+/* ********* Start Settings-container ********* */
+
+.Settings-Container {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 10px;
+}
+
+.Settings-Container * {
+  color: var(--black);
+}
+
+.Settings-Container .Right,
+.Settings-Container .Left {
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  margin: 0;
+  position: relative;
+}
+
+/* Right */
+.Settings-Container .Right {
+  padding: 0 20px;
+}
+
+.Settings-Container .Right img {
+  width: 200px;
+  display: flex;
+  margin: 20px auto;
+  margin-bottom: 40px;
+  border-radius: 50%;
+  border: 4px solid var(--blue);
+}
+
+/* Left */
+.Wrapper-button {
+  border-bottom: var(--border);
+}
+
+.Wrapper-button button {
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  background: var(--white);
+  transition: 0.3s !important;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.Wrapper-button button.active {
+  border-bottom: 2px solid var(--blue);
+}
+
+.SubContainer {
+  height: 100%;
+}
+
+.ContainerStep p {
+  font-size: 15px;
+  margin-top: 3px;
+}
+
+.Settings-Container .Right .card-item h3 {
+  font-size: 15px;
+  margin-top: 7px;
+}
+
+.Settings-Container .ContainerStep h4 {
+  margin: 20px 0;
+}
+
+.Settings-Container .Left .card-item {
+  padding: 5px;
+  padding-bottom: 10px;
+  border-bottom: var(--border);
+}
+
+.Settings-Container .Left .card-item p {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+.Settings-Container .FooterStep {
+  justify-content: flex-end;
+}
+
+
+.Settings-Container .SubContainer {
+  background-color: rgba(210, 96, 14, 0);
+  width: 100%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.Settings-Container .SubContainer .ContainerStep {
+  padding: 30px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  transition: all .2s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+
+.Settings-Container .SubContainer .ContainerStep.active {
+  right: 0;
+  transition: all .2s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+
+/* ********* End Settings-container ********* */
+/* ********* Start @media End File ********* */
+@media (max-width:1200px) {
+
+  .Layout-Container .Buttons-Container {
+    gap: 10px;
+    display: block;
+  }
+
+  .Layout-Container .Buttons-Container .left {
+    margin-top: 25px;
+    justify-content: end;
+  }
+
+  .Layout-Container .Search-Container .input-box {
+    margin-bottom: 20px !important;
+  }
+
+  .Layout-Container .Table-Container {
+    overflow-x: auto;
+  }
+
+  .Receipts-container {
+    grid-template-columns: 1fr;
+  }
+
+  .Layout-Container .Receipt-Right {
+    overflow: hidden;
+  }
+
+  .Layout-Container .Receipt-Right .Table {
+    margin: 20px 0 !important;
+  }
+
+  .Layout-Container .Table {
+    width: 1200px;
+  }
+
+  .Form {
+    width: 92%;
+  }
+
+  .UnitsParent {
+    height: 200px;
+  }
+
+  .Form .Form-scroll {
+    height: 600px;
+    overflow-y: auto;
+  }
+
+}
+
+@media (max-width:610px) {
+  .Person-Details {
+    grid-template-columns: 1fr !important;
+  }
+
+  .Layout-Container .Buttons-Container .Row {
+    width: auto !important;
+  }
+
+  .Alert {
+    width: 95%;
+  }
+
+  .Alert-container .Form-footer {
+    justify-content: center;
+
+  }
+
+  .Alert-text {
+    display: block;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .Alert-text i {
+    font-size: 25px;
+  }
+
+  .Receipts-container .Table-Container {
+    height: 300px;
+  }
+
+  .Settings-Container {
+    grid-template-columns: 1fr;
+    padding-bottom: 25px;
+  }
+
+  .Settings-Container .Right img {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+
+  .Settings-Container .SubContainer {
+    height: 550px;
+    overflow: auto;
+  }
+
+  .Settings-Container .SubContainer .ContainerStep {
+    padding: 30px 10px;
+  }
+
+}
+
+@media print {
+
+  .Layout-Menu,
+  .Filter-icon,
+  .Layout-Header,
+  .Search-Container,
+  .Buttons-Container,
+  .Layout-Container .Person-Details img,
+  .Layout-Container .Person-Details .btns {
+    display: none !important;
+  }
+
+  .Layout-Container .Table.HideTh tr th:last-child,
+  .Layout-Container .Table.HideTh tr td:last-child {
+    display: none !important;
+  }
+
+  .Details-Company {
+    display: flex;
+    color: #000;
+  }
+
+  .Wrapper-Tilte {
+    width: 100%;
+  }
+
+  .Layout-Container .Title-Container,
+  .Layout-Container .Title-Container2 {
+    text-align: center;
+    display: block;
+    margin: 10px 0;
+  }
+
+  .Layout-Container .Person-Details {
+    grid-template-columns: 4fr 2.25fr !important;
+    border: none;
+    color: #000;
+  }
+
+  .Layout-Container .Person-Details .item {
+    margin: 5px 0;
+  }
+
+  .Receipt-Container .Person-Details .item {
+    margin-top: 10px;
+  }
+
+  .Layout-Container,
+  .Table-Container,
+  .Table-Container .Table {
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #000;
+  }
+
+  /* .Layout-Container *  */
+  .Table-Container .Table * {
+    color: #000 !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+  }
+
+  .Table-Container .Table tr th {
+    font-size: 17px !important;
+    font-weight: 900 !important;
+  }
+
+}

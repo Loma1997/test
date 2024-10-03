@@ -1,0 +1,884 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    /* user-select: none; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root {
+    /* Color Roots  */
+    --primary: #4099ff;
+    /* --primary: linear-gradient(45deg,#4099ff,#73b4ff); */
+    --green: #2ed8b6;
+    --green-light: #56ca00;
+    --orange: #FFB64D;
+    --red: #FF5370;
+
+    --blue: #16b1ff;
+    --blue-linear: #0a456d;
+    --blue-linearHover: #003d66d2;
+    --yellow: #ffd950;
+    --teal: #20c997;
+
+    --FFF: #fff;
+    --white: #f3f3f3;
+    --secondary: #b0b0b03d;
+    --black: #000;
+    --dark: #4b4b4b;
+    --bg-bar: #d9d9d9;
+    --ccc: #ccc;
+    --tr-bg: #b0b0b03d;
+    --border-color: #bababa;
+    --border: 1px solid var(--border-color);
+
+    --background: linear-gradient(270deg, #55e4fd 0%, #c4a5fe 100%) !important;
+    --background: linear-gradient(270deg, #0a456d 0%, #3a7297 100%) !important;
+    --box-shadow: 0 0.25rem 0.5rem rgba(58, 53, 65, 0.1);
+}
+
+html::-webkit-scrollbar {
+    width: 0.3rem;
+    direction: ltr;
+    display: none;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 5rem;
+}
+
+.UnitsParent::-webkit-scrollbar,
+.notficat-items::-webkit-scrollbar,
+.wrapper-items::-webkit-scrollbar,
+.SelectItmes::-webkit-scrollbar,
+.Form::-webkit-scrollbar,
+.Table-Container::-webkit-scrollbar {
+    width: 0.3rem;
+    height: 0.3rem;
+}
+
+.UnitsParent::-webkit-scrollbar-thumb,
+.notficat-items::-webkit-scrollbar-thumb,
+.wrapper-items::-webkit-scrollbar-thumb,
+.SelectItmes::-webkit-scrollbar-thumb,
+.Form::-webkit-scrollbar-thumb,
+.Table-Container::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 5rem;
+    cursor: pointer;
+}
+
+/* ********* Start layout-body ********* */
+.layout-body.Dark {
+    --white: #18191A;
+    --secondary: rgba(58, 53, 65, 0.38);
+    --black: #f4f5fa;
+    --dark: #a8a9aa;
+    --ccc: rgba(58, 53, 65, 0.38);
+    --bg-bar: rgba(58, 53, 65, 0.38);
+    --tr-bg: rgba(68, 66, 70, 0.38);
+    --border-color: #444;
+    --border: 1px solid var(--border-color);
+    --green-light: #57c800e0;
+}
+
+.layout-body {
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    direction: rtl;
+}
+
+/* ********* End  layout-body********* */
+/* ********* Start Layout-Menu ********* */
+.Layout-Menu {
+    width: 60px;
+    min-height: 100vh;
+    border-left: var(--border);
+    background: var(--white);
+    transition: 0.3s;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    box-shadow: var(--box-shadow);
+}
+
+.Layout-Menu:hover,
+.layout-body.active .Layout-Menu {
+    width: 260px;
+}
+
+.layout-logo {
+    height: 70px;
+    padding: 0 15px;
+    direction: ltr;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.layout-logo img {
+    width: 35px;
+    margin-left: auto;
+}
+
+.layout-logo .logo-text {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important;
+    color: var(--black);
+    font-size: 22px;
+    font-weight: 700;
+    margin-right: auto;
+    margin-left: 10px;
+    letter-spacing: 0.4px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.Layout-Menu .cancel-icon {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    display: none;
+    color: var(--black);
+}
+
+.Layout-Menu .wrapper-items {
+    height: calc(100vh - 70px);
+    padding: 10px 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.layout-body.active .Layout-Menu .wrapper-items {
+    padding: 10px 0px 50px 12px;
+}
+
+.tools .tools-menu .menu-item a,
+.Layout-Menu .menu-item a {
+    text-decoration: none;
+    color: var(--black);
+    display: flex;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 15px 5px 5px;
+    align-items: center;
+    border-radius: 25px 0 0 25px;
+    margin: 5px 0;
+    line-height: 10px;
+    cursor: pointer;
+}
+
+.Layout-Menu:hover .menu-item a,
+.layout-body.active .Layout-Menu .menu-item a {
+    padding: 5px 10px 5px 22px;
+}
+
+.menu-item.active a {
+    background: var(--background) !important;
+    color: var(--FFF) !important;
+}
+
+
+.tools .tools-menu .menu-item a:hover,
+.Layout-Menu a:hover {
+    background: var(--secondary);
+}
+
+.icon,
+.Layout-Menu .menu-item a .icon {
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.icon,
+.Layout-Menu:hover .menu-item a .icon,
+.layout-body.active .Layout-Menu .menu-item a .icon {
+    background: var(--secondary);
+}
+
+.arrow-toggle {
+    margin-right: auto;
+    font-size: 22px;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.menu-item.open .arrow-toggle {
+    transform: rotate(-180deg);
+}
+
+
+
+.sub-menu {
+    display: none;
+}
+
+.layout-body .Layout-Menu .sub-menu .menu-item a {
+    padding: 5px 25px 5px 22px;
+}
+
+.layout-body .Layout-Menu .sub-menu .menu-item:first-child a {
+    margin: 0;
+}
+
+.layout-body .Layout-Menu .sub-menu .menu-item a .icon {
+    background: none;
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+}
+
+.Layout-Menu .menu-item a .item-title,
+.Layout-Menu .sub-menu .menu-item a .item-title {
+    opacity: 0;
+    white-space: nowrap;
+}
+
+.layout-body.active .logo-text,
+.layout-body .Layout-Menu:hover .logo-text,
+.layout-body.active .arrow-toggle,
+.layout-body .Layout-Menu:hover .arrow-toggle,
+.layout-body.active .Layout-Menu .menu-item a .item-title,
+.layout-body .Layout-Menu:hover .menu-item a .item-title {
+    opacity: 1;
+}
+
+/* ********* End  Layout-Menu ********* */
+/* ********* Start Layout-Header ********* */
+.Layout-Header {
+    width: calc(100% - 60px);
+    margin-right: 60px;
+    height: 50px;
+    background: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    transition: 0.3s;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    right: 0;
+    border-bottom: var(--border);
+    box-shadow: var(--box-shadow);
+}
+
+.Layout-Header .menu-toggle {
+    font-size: 25px;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.Layout-Header .tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--black);
+}
+
+.Layout-Header .tools .icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.Layout-Header .tools img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.Layout-Header .tools .notfications,
+.Layout-Header .tools .UserTools {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-radius: 50%;
+}
+
+/* العلامة الخطره اللي علي الصورة */
+.Layout-Header .tools .num-not,
+.Layout-Header .tools .UserTools::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--green);
+    border: 1.5px solid var(--white);
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 9;
+    border-radius: 50%;
+}
+
+.Layout-Header .tools .num-not {
+    padding: 9px;
+    font-size: 12px;
+    color: var(--FFF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--red);
+    top: -5px !important;
+    right: -5px;
+
+}
+
+.Layout-Header .tools .notficat-body,
+.Layout-Header .tools .UserPage {
+    width: 220px;
+    background: var(--white);
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    padding: 5px;
+    border-radius: 8px;
+    position: absolute;
+    top: 52px;
+    left: -10px;
+    display: none;
+}
+
+/* العناصر */
+.Layout-Header .tools .notficat-body .item,
+.Layout-Header .tools .UserPage .PageItem {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--black);
+    position: relative;
+    overflow: hidden;
+}
+
+/* العناصر هوفر */
+.Layout-Header .tools .notficat-body .item:hover,
+.Layout-Header .tools .UserPage .PageItem:hover {
+    background: var(--secondary);
+}
+
+.Layout-Header .tools .UserPage .PageItem .bxs-left-arrow {
+    margin-right: auto;
+}
+
+/* التغييرات */
+.Layout-Header .tools .notficat-body {
+    width: 400px;
+    padding: 15px;
+    left: 0px;
+}
+
+.Layout-Header .tools .notficat-items {
+    width: 100%;
+    height: 350px;
+    padding-left: 2px;
+    overflow-y: auto;
+}
+
+.Layout-Header .tools .notficat-body .item .right {
+    position: relative;
+    margin-left: 10px;
+}
+
+.Layout-Header .tools .notficat-body .item .right img {
+    width: 55px;
+    height: 55px;
+}
+
+.Layout-Header .tools .notficat-body .item .right i {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.Layout-Header .tools .notficat-body .item .right .bx-user-plus {
+    background: var(--primary);
+    color: #fff;
+}
+
+.Layout-Header .tools .notficat-body .item .right .bx-trash {
+    background: var(--red);
+    color: #fff;
+}
+
+.Layout-Header .tools .notficat-body .item .right .bx-bell,
+.Layout-Header .tools .notficat-body .item .right .bx-pencil {
+    background: var(--green);
+    color: #fff;
+}
+
+.Layout-Header .tools .notficat-body .item .right .bx-calendar,
+.Layout-Header .tools .notficat-body .item .right .bx-history {
+    background: var(--orange);
+    color: #fff;
+}
+
+.Layout-Header .tools .notficat-body .item .left {
+    width: 100%;
+}
+
+.Layout-Header .tools .notficat-body .item .left div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.Layout-Header .tools .notficat-body .item .left p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.Layout-Header .tools .notficat-body .item .left span {
+    font-size: 13px;
+    font-weight: 600;
+    gap: 5px;
+}
+
+.Layout-Header .tools .notficat-body .item .left span i {
+    font-size: 15px;
+}
+
+
+/* ********* End  Layout-Header ********* */
+/* ********* Start Laypout Container  ********* */
+.Layout-Container {
+    width: calc(100% - 60px);
+    margin-right: 60px;
+    min-height: 100vh;
+    background: var(--white);
+    padding: 60px 20px 20px 20px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.layout-body.active .Layout-Header,
+.layout-body.active .Layout-Container {
+    width: calc(100% - 260px);
+    margin-right: 260px;
+}
+
+/* ********* End  Laypout Container  ********* */
+/* ********* Start  Receipt-Container  ********* */
+
+.Receipt-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(33, 22, 46, 0.5), rgba(29, 1, 105, 0.24));
+}
+
+.Receipt-Container .Layout-Container {
+    width: 800px;
+    height: 100vh;
+    overflow: auto;
+    margin: 0;
+    padding: 20px;
+}
+
+.Receipt-Container .Title-Container {
+    margin: 5px 0;
+    text-align: center;
+    color: var(--blue-linear) !important;
+    font-size: 25px;
+}
+
+.Receipt-Container .Person-Details {
+    border: none !important;
+    padding: 0 5px !important;
+    grid-template-columns: 1fr .9fr !important;
+}
+
+.Receipt-Container .Person-Details .item h4 {
+    width: 100px !important;
+}
+
+.Receipt-Container .Layout-Container::-webkit-scrollbar,
+.Receipt-Container .Table-Container::-webkit-scrollbar {
+    display: none;
+}
+
+.Receipt-Container .Details-Total .itme {
+    display: flex;
+    margin-top: 7px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.Receipt-Container .Details-Total .itme span {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+
+.Receipt-Container .Details-Total .itme span::after {
+    content: ":";
+}
+
+.Receipt-Container .Details-Total .itme {
+    width: 30%;
+    padding: 6px 10px;
+    border: var(--border);
+    border-radius: 5px;
+    margin-right: auto;
+}
+
+/* ********* End  Receipt-Container  ********* */
+/* ********* Start tooltip ********* */
+.tooltip {
+    min-width: 150px;
+    min-height: 25px;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 5px;
+    color: var(--black);
+    background: var(--white);
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    position: absolute;
+    top: -45px;
+    left: 0;
+    display: none;
+    z-index: 9;
+}
+
+/* تنسيقات السهم العمومية مشتركة */
+.tooltip::after,
+.arrow::after {
+    content: '';
+    transform: rotate(45deg);
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--white);
+    border-style: solid;
+    border-width: 1px;
+}
+
+/* جعل السهم اسفل اليسار */
+.tooltip::after {
+    bottom: -6px;
+    left: 20px;
+    border-color: transparent var(--border-color) var(--border-color) transparent;
+}
+
+/* جعل السهم اعلي اليسار */
+.arr-top-left {
+    top: 50px !important;
+    left: 0 !important;
+}
+
+.arr-top-left::after {
+    top: -6px;
+    left: 20px;
+    border-color: var(--border-color) transparent transparent var(--border-color);
+}
+
+/* جعل السهم اعلي يمين */
+.arr-top-right {
+    top: 50px !important;
+    right: 0 !important;
+}
+
+.arr-top-right::after {
+    top: -6px;
+    right: 20px;
+    border-color: var(--border-color) transparent transparent var(--border-color);
+}
+
+/* جعل السهم ناحية اليمين */
+.arr-right-center {
+    top: 0px !important;
+    right: 40px !important;
+}
+
+.arr-right-center::after {
+    top: 30%;
+    right: -6px;
+    border-color: var(--border-color) var(--border-color) transparent transparent;
+}
+
+/* جعل السهم ناحية اليسار */
+
+.arr-left-center {
+    top: 0px !important;
+    left: 40px !important;
+}
+
+.arr-left-center::after {
+    top: 30%;
+    left: -6px;
+    border-color: transparent transparent var(--border-color) var(--border-color);
+}
+
+/* show tooltip when hover on element or focus input*/
+.card-item:hover .tooltip,
+input:focus~.tooltip,
+select:focus~.tooltip,
+.Filter-box:hover .tooltip,
+.btn-box:hover .tooltip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ********* End  tooltip  ********* */
+/* ********* Start card-item  ********* */
+
+.card-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: var(--black);
+}
+
+/* card itme */
+.card-item .left {
+    margin-right: auto;
+    margin-left: 10px;
+    text-align: end;
+}
+
+.card-item h3 {
+    color: var(--black);
+}
+
+.card-item p {
+    color: var(--dark);
+}
+
+.item-icon {
+    min-width: 40px;
+    height: 40px;
+    font-size: 25px;
+    font-weight: 500;
+    margin-left: 15px;
+    color: var(--FFF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    background: var(--secondary);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+}
+
+/* ********* End  card-item   ********* */
+/* ********* Start  Row   ********* */
+.Row {
+    display: grid;
+    gap: 10px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.grid-2A {
+    grid-template-columns: 3fr 6fr;
+}
+
+.grid-2B {
+    grid-template-columns: 6fr 3fr;
+}
+
+.grid-2C {
+    grid-template-columns: 7fr 2fr;
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-3A {
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-7 {
+    /* display: flex; */
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 0.5fr;
+    align-items: center;
+}
+
+.grid-7 .btn {
+    width: 35px;
+}
+
+/* ********* End  Row  ********* */
+/* ********* Start line ********* */
+
+.line {
+    display: flex;
+    align-items: center;
+}
+
+.Layout-Menu .line {
+    justify-content: center;
+}
+
+.line div {
+    margin: 0 0.2rem;
+}
+
+.line div:nth-child(1),
+.line div:nth-child(3) {
+    height: 3px;
+    width: 50%;
+    background: var(--blue);
+    border-radius: 5px;
+}
+
+.Layout-Menu .line div:nth-child(1),
+.Layout-Menu .line div:nth-child(3) {
+    width: 70px;
+}
+
+.line div:nth-child(2) {
+    width: 10px;
+    height: 10px;
+    background: var(--blue);
+    border-radius: 50%;
+}
+
+/* ********* End line ********* */
+/* ********* Start Icon ********* */
+
+.primary .left .line-graph::after,
+.primary .item-icon {
+    background: var(--primary) !important;
+    color: #fff;
+}
+
+.green .left .line-graph::after,
+.green .item-icon {
+    background: var(--green) !important;
+    color: #fff;
+}
+
+.blue .left .line-graph::after,
+.blue .item-icon {
+    background: var(--blue) !important;
+    color: #fff;
+}
+
+.gray .left .line-graph::after,
+.gray .item-icon {
+    color: var(--blue) !important;
+    color: #fff;
+}
+
+.orange .item-icon {
+    background: var(--orange);
+    color: #fff;
+}
+
+.collect .left h3,
+.collect .item-icon {
+    color: var(--green) !important;
+}
+
+.payment .left h3,
+.payment .item-icon {
+    color: var(--red) !important;
+}
+
+/* ********* Start @media End File ********* */
+@media (max-width: 1200px) {
+    .Layout-Menu {
+        width: 260px;
+        min-height: 100vh;
+    }
+
+    .layout-body.active .Layout-Menu {
+        width: 0px;
+    }
+
+    .Layout-Header .tools .notficat-body {
+        width: 300px;
+    }
+
+    .Layout-Menu .wrapper-items .menu-item a .icon {
+        background: var(--secondary);
+    }
+
+    .Layout-Menu .wrapper-items .menu-item a {
+        padding: 5px 10px 5px 22px;
+    }
+
+    .Layout-Header,
+    .Layout-Container {
+        width: calc(100% - 0px);
+        margin-right: 0px;
+    }
+
+    .layout-body.active .Layout-Header,
+    .layout-body.active .Layout-Container {
+        width: calc(100% - 0px);
+        margin-right: 0px;
+    }
+
+    .Layout-Menu .cancel-icon {
+        display: table;
+    }
+
+    .layout-body .logo-text,
+    .layout-body .arrow-toggle,
+    .layout-body .Layout-Menu .menu-item a .item-title {
+        opacity: 1;
+    }
+
+    .grid-2,
+    .grid-2A,
+    .grid-2B,
+    .grid-2C,
+    .grid-3,
+    .grid-3A {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .grid-7 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}

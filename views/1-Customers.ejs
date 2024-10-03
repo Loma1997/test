@@ -1,0 +1,194 @@
+<%- include('Partials/Header.ejs'); -%>
+
+    <%- include('Partials/Menu.ejs'); -%>
+
+        <div class="Layout-Container">
+
+            <%- include('Partials/DetailsCompany.ejs'); -%>
+
+                <div class="Wrapper-Tilte">
+                    <h1 class="Title-Container">Market's Customers</h1>
+                    <div class="line">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="Buttons-Container">
+                    <div class="right">
+                        <div class="Row grid-4">
+                            <div class="card-item gray">
+                                <i class='item-icon bx bx-user'></i>
+                                <div class="center">
+                                    <h3 class="TableLength">0.00</h3>
+                                    <p>عدد <%= Title %>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-item gray">
+                                <i class='item-icon bx bx-dollar'></i>
+                                <div class="center">
+                                    <h3 class="FinalBalance">0.00</h3>
+                                    <p>الاشتراكات الشهرية</p>
+                                </div>
+                            </div>
+                            <div class="card-item gray">
+                                <i class='item-icon bx bx-dollar'></i>
+                                <div class="center">
+                                    <h3 class="FinalBalance">0.00</h3>
+                                    <p>الاشتراكات السنوية</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left">
+                        <%- include('Partials/Buttons.ejs'); -%>
+                    </div>
+                </div>
+
+                <div class="Search-Container">
+                    <div class="input-box">
+                        <input type="search" id="SearchByName" class="SearchInput" onkeyup="Search()" required>
+                        <label>Search By Name</label>
+                        <div class="tooltip arrow arr-bottom-left">Search By... </div>
+                        <div class="Filter-box">
+                            <div class="tooltip arrow arr-bottom-left">Select Search By</div>
+                            <i class='bx bxs-filter-alt Filter-icon' onclick="ShowFilter()"></i>
+                            <div class="filter-item arrow arr-top-left">
+                                <h5 id="SearchByName" class="active">Search By Name</h5>
+                                <h5 id="SearchByEmail">Search By Email</h5>
+                                <h5 id="SearchByPhone">Search By Phone</h5>
+                                <h5 id="SearchByAddress">Search By Address</h5>
+                            </div>
+                        </div>
+                        <span class='bx bx-search'></span>
+                    </div>
+                    <%- include('Partials/SearchDate.ejs'); -%>
+                </div>
+
+                <div class="Table-Container">
+                    <table class="Table HideTh">
+                        <thead>
+                            <tr>
+                                <th>م</th>
+                                <th>
+                                    <div class="FlexTH">
+                                        <Span> Name</Span>
+                                        <i id="Name" class='bx bx-filter-alt Filter-icon'
+                                            onclick="SortMyData(event)"></i>
+                                    </div>
+                                </th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th>Plan</th>
+                                <th>Amount</th>
+                                <th>
+                                    <div class="FlexTH">
+                                        <Span>Last Activetion</Span>
+                                        <i id="UpdatedAt" class='bx bx-filter-alt Filter-icon'
+                                            onclick="SortMyData(event)"></i>
+                                    </div>
+                                </th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="Table-body"></tbody>
+                    </table>
+                </div>
+
+        </div>
+
+
+        <div class="Form-Container Form-Collect">
+            <div class="overlow"></div>
+            <form class="Form">
+                <div class="Form-scroll">
+                    <i onclick="Hide_Container()" class="bx bx-x X-Toast"></i>
+                    <div class="Form-header">
+                        <div class="Wrapper-Tilte">
+                            <h3 class="Title-Form-Collect">Collect From Customer</h3>
+                            <div class="line">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <i class="Form-logo">
+                            <img src="Img/Logo.png" alt="" srcset="">
+                            <h1 class="logo-text">MARKET</h1>
+                        </i>
+                    </div>
+
+                    <div class="Person-Details">
+                        <div class="right">
+                            <div class="item">
+                                <h4>Name</h4>
+                                <p class="Name"></p>
+                            </div>
+                            <div class="item">
+                                <h4>Email</h4>
+                                <p class="Email"></p>
+                            </div>
+                            <div class="item">
+                                <h4>Phone</h4>
+                                <p class="Phone"></p>
+                            </div>
+                            <div class="item">
+                                <h4>Address</h4>
+                                <p class="Address"></p>
+                            </div>
+                        </div>
+                        <div class="left">
+                            <div class="item">
+                                <h4>Plan</h4>
+                                <p class="Type-Subscribe"></p>
+                            </div>
+                            <div class="item">
+                                <h4>Amount</h4>
+                                <p class="Amount-Subscribe"></p>
+                            </div>
+                            <div class="item">
+                                <h4>Last Activetion</h4>
+                                <p class="Last-Subscribe"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="Form-body">
+                        <div class="Row grid-2">
+                            <div class="input-box">
+                                <input type="text" class="DocDate" onfocus="(this.type='date')"
+                                    onblur="(this.type='text')" required>
+                                <label>Date</label>
+                                <span class="bx bx-calendar"></span>
+                            </div>
+                            <div class="input-box">
+                                <input type="number" class="Total" min="1" required>
+                                <label>Amount</label>
+                                <span class='bx bx-dollar'></span>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" class="PaymentWay" required>
+                            <label>Notes</label>
+                            <span class='bx bxs-message-dots'></span>
+                        </div>
+                    </div>
+                    <div class="Form-footer">
+                        <button type="button" id="" onclick="NewCollectOrPayment(id)" class="btn btn-Save btn-Collect">Save
+                            Data</button>
+                        <button type="button" onclick="Hide_Container()" class="btn btn-Cansel">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+        <%- include('Partials/Footer.ejs'); -%>
+
+            <script src="js/4-Customers.js"></script>
+
+            </body>
+
+            </html>
